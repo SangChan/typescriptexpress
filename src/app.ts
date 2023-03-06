@@ -21,7 +21,7 @@ app.get("/api/users", (req, res) => {
 
 app.get("/api/users/user", (req, res) => {
 
-    const user_id = req.query.user_id
+    const user_id = parseInt(req.query.user_id as string)
     const user = users.filter(data => data.id == user_id);
 
     res.json({ok: false, user: user})
@@ -29,7 +29,7 @@ app.get("/api/users/user", (req, res) => {
 
 app.get("/api/users/userBody", (req, res) => {
 
-    const user_id = req.body.user_id
+    const user_id = parseInt(req.query.user_id as string)
     const user = users.filter(data => data.id == user_id);
 
     res.json({ok: false, user: user})
@@ -37,7 +37,7 @@ app.get("/api/users/userBody", (req, res) => {
 
 app.get("/api/users/:user_id", (req, res) => {
 
-    const user_id = req.params.user_id
+    const user_id = parseInt(req.query.user_id as string)
     const user = users.filter(data => data.id == user_id);
 
     res.json({ok: true, user: user})
@@ -54,24 +54,7 @@ app.post("/api/users/add", (req, res) => {
 app.put("/api/users/update", (req, res) => {
     
     const { id, name } = req.body
-
-    const user = users.map(data => {
-
-        if(data.id == id) data.name = name
-
-        return {
-            id: data.id,
-            name: data.name
-        }
-    })
-
-    res.json({ok: true, users: user})
-})
-
-app.patch("/api/user/update/:user_id", (req, res) => {
-
-    const { user_id} = req.params
-    const { name } = req.body
+    const user_id = parseInt(id as string)
 
     const user = users.map(data => {
 
@@ -86,9 +69,28 @@ app.patch("/api/user/update/:user_id", (req, res) => {
     res.json({ok: true, users: user})
 })
 
+app.patch("/api/user/update/:user_id", (req, res) => {
+
+    const { user_id } = req.params
+    const { name } = req.body
+    const _id = parseInt(user_id)
+
+    const user = users.map(data => {
+
+        if(data.id == _id) data.name = name
+
+        return {
+            id: data.id,
+            name: data.name
+        }
+    })
+
+    res.json({ok: true, users: user})
+})
+
 app.delete("/api/user/delete", (req, res) => {
 
-    const user_id = req.query.user_id
+    const user_id = parseInt(req.query.user_id as string)
     const user = users.filter(data => data.id != user_id );
 
     res.json({ok: true, users: user})
