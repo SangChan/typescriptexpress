@@ -1,5 +1,8 @@
 import express from 'express'
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('.././swagger_output.json')
+
 const app = express()
 
 app.use(express.json());
@@ -154,6 +157,4 @@ app.listen(12345, () => {
     console.log('Server running')
 })
 
-const { swaggerUi, specs } = require("./swagger")
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
