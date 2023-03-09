@@ -1,11 +1,11 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "swagger title",
+    "description": "swagger 떴냐?"
   },
-  "host": "localhost:3000",
+  "host": "localhost:12345",
   "basePath": "/",
   "schemes": [
     "http"
