@@ -18,6 +18,13 @@ app.get('/', (req, res, next) => {
     res.send('Hello')
 })
 
+app.get("/api/parseLink", (req, res) => {
+    const url = new URL(req.query.url as string)
+    res.json({
+        result: "true but.."
+    })
+})
+
 /**
  * @path {GET} http://localhost:12345/api/users
  * @description 요청 데이터 값이 없고 반환 값이 있는 GET Method
