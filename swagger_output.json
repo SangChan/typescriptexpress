@@ -1,11 +1,11 @@
 {
-  "openapi": "3.0.0",
+  "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "swagger title",
-    "description": "swagger 떴냐?"
+    "title": "REST API",
+    "description": ""
   },
-  "host": "localhost:12345",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
@@ -15,6 +15,23 @@
       "get": {
         "description": "",
         "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/parseLink": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
