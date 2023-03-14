@@ -21,7 +21,8 @@ app.get('/', (req, res, next) => {
 app.get("/api/parseLink", (req, res) => {
     const url = new URL(req.query.url as string)
     res.json({
-        result: "true but.."
+        result: "true but..",
+        url: url.toJSON()
     })
 })
 
