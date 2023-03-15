@@ -19,10 +19,21 @@ app.get('/', (req, res, next) => {
 })
 
 app.get("/api/parseLink", (req, res) => {
+    interface ErrorCheckType {
+        result : Boolean
+        message : String
+    }
     const url = new URL(req.query.url as string)
+    console.log("protocol: ",url.protocol)
+    console.log("hostname: ",url.hostname)
+    const scheme_check : ErrorCheckType = {
+        result : (url.protocol === "https:") || url.toString().startsWith('https://'),
+        message : "no problem"
+    }
+
     res.json({
-        result: "true but..",
-        url: url.toJSON()
+        url: url.toString(),
+        schemeCheck: scheme_check
     })
 })
 
