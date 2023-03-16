@@ -20,22 +20,38 @@ app.get('/', (req, res, next) => {
 
 app.get("/api/parseLink", (req, res) => {
     interface ErrorCheckType {
-        result : Boolean
+        result : String
         message : String
     }
     const url = new URL(req.query.url as string)
     console.log("protocol: ",url.protocol)
     console.log("hostname: ",url.hostname)
     const scheme_check : ErrorCheckType = {
-        result : (url.protocol === "https:") || url.toString().startsWith('https://'),
-        message : "no problem"
+        result : success((url.protocol === "https:") || url.toString().startsWith('https://')),
+        message : "valid"
+    }
+
+    const path_check : ErrorCheckType = {
+        result : success(true),
+        message : "valid"
+    }
+
+    const query_check : ErrorCheckType = {
+        result : success(true),
+        message : "valid"
     }
 
     res.json({
         url: url.toString(),
-        schemeCheck: scheme_check
+        schemeCheck: scheme_check,
+        pathCheck: path_check,
+        queryCheck: query_check
     })
 })
+
+function success(value: Boolean) {
+    return value ? "success" : "fail"
+}
 
 /**
  * @path {GET} http://localhost:12345/api/users
