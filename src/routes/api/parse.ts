@@ -8,13 +8,14 @@ const parse = {
         const url = new URL(req.query.url as string)
         console.log("protocol: ",url.protocol)
         console.log("hostname: ",url.hostname)
+        console.log("path:",url.pathname)
         const scheme_check : ErrorCheckType = {
             result : success((url.protocol === "https:") || url.toString().startsWith('https://')),
             message : "valid"
         }
 
         const path_check : ErrorCheckType = {
-            result : success(true),
+            result : success(url.pathname.length > 1),
             message : "valid"
         }
 
