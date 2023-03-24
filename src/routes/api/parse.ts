@@ -9,6 +9,8 @@ const parse = {
         console.log("protocol: ",url.protocol)
         console.log("hostname: ",url.hostname)
         console.log("path:",url.pathname)
+        console.log("query:",url.search)
+        console.log("query keys:",url.searchParams.keys())
         const scheme_check : ErrorCheckType = {
             result : success((url.protocol === "https:") || url.toString().startsWith('https://')),
             message : "valid"
