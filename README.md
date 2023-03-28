@@ -29,4 +29,15 @@
 
 - app.ts
 
-## /dist
+## /src/routes
+
+- index/ts
+
+## /src/routes/api
+
+- api.ts
+- parse.ts
+
+## /src/public
+
+## /src/views
