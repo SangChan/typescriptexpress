@@ -31,7 +31,7 @@
 
 ## /src/routes
 
-- index/ts
+- index.ts
 
 ## /src/routes/api
 
