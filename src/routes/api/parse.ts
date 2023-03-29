@@ -4,6 +4,7 @@ const parse = {
         interface ErrorCheckType {
             result : String
             message : String
+            errorMessage() : String
         }
         const url = new URL(req.query.url as string)
         console.log("protocol: ",url.protocol)
@@ -13,17 +14,26 @@ const parse = {
         console.log("query:",url.searchParams.keys())
         const scheme_check : ErrorCheckType = {
             result : success((url.protocol === "https:") || url.toString().startsWith('https://')),
-            message : "valid"
+            message : "valid",
+            errorMessage() {
+                "valid"
+            }
         }
 
         const path_check : ErrorCheckType = {
             result : success(url.pathname.length > 1),
-            message : "valid"
+            message : "valid",
+            errorMessage() {
+                "valid"
+            }
         }
 
         const query_check : ErrorCheckType = {
             result : success(true),
-            message : "valid"
+            message : "valid",
+            errorMessage() {
+                "valid"
+            }
         }
 
         res.json({
