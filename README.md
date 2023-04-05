@@ -22,12 +22,12 @@
 
 - index.js
 - package.json
-- swagger_output.json
-- swagger.ts
 
 ## /src
 
 - app.ts
+- swagger.ts
+- swagger_output.json
 
 ## /src/routes
 
