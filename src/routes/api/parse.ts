@@ -1,13 +1,23 @@
 import express, { Request, Response, NextFunction } from 'express'
+
+enum DataType {
+    String = "String",
+    Integer = "Integer",
+    Date = "Date",
+    Url = "Url",
+}
+
+namespace DataType {
+    export function check(type: DataType): Boolean {
+        if (type === DataType.String) {
+            return true
+        }
+        return false
+    }
+}
+
 const parse = {
     link : function(req : Request, res: Response) {
-        const enum TypeCheck {
-            STRING = "String",
-            INTEGER = "Integer",
-            DATE = "Date",
-            URL = "Url",
-        } 
-
         interface ErrorCheckIntrerface {
             result : String
             message : String
