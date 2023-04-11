@@ -16,36 +16,51 @@ namespace DataType {
     }
 }
 
+interface ErrorCheckIntrerface {
+    result : String
+    message : String
+    errorMessage() : String
+}
+
+class ErrorCheckType implements ErrorCheckIntrerface {
+    result : String
+    message : String
+
+    constructor(result: Boolean) {
+        this.result = result ? `success` : `fail`
+        this.message = this.errorMessage()
+    }
+
+    errorMessage() {
+        return "valid"
+    }
+}
+
+class SchemChecker implements ErrorCheckIntrerface {
+    result: String
+    message: String
+
+    constructor(scheme: String) {
+        const res :boolean = (scheme === "https:") || scheme.startsWith('https://')
+        this.result = res ? 'success' : 'fail'
+        this.message = this.errorMessage()
+    }
+
+    errorMessage(): String {
+        return "valid"
+    }
+    
+}
+
 const parse = {
     link : function(req : Request, res: Response) {
-        interface ErrorCheckIntrerface {
-            result : String
-            message : String
-            errorMessage() : String
-        }
-
-        class ErrorCheckType implements ErrorCheckIntrerface {
-            result : String
-            message : String
-
-            constructor(result: Boolean) {
-                this.result = result ? `success` : `fail`
-                this.message = this.errorMessage()
-            }
-
-            errorMessage() {
-                return "valid"
-            }
-        }
-
-
         const url = new URL(req.query.url as string)
         console.log("protocol: ",url.protocol)
         console.log("hostname: ",url.hostname)
         console.log("path:",url.pathname)
         console.log("query:",url.search)
         console.log("query:",url.searchParams.keys())
-        const scheme_check : ErrorCheckType = new ErrorCheckType((url.protocol === "https:") || url.toString().startsWith('https://'))
+        const scheme_check : ErrorCheckIntrerface = new SchemChecker(url.protocol)
         const path_check : ErrorCheckType = new ErrorCheckType(url.pathname.length > 1)
         const query_check : ErrorCheckType = new ErrorCheckType(true)
 
