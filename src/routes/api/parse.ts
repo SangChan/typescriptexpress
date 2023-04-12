@@ -52,6 +52,38 @@ class SchemChecker implements ErrorCheckIntrerface {
     
 }
 
+class PathChecker implements ErrorCheckIntrerface {
+    result: String
+    message: String
+
+    constructor(path: String) {
+        const res :boolean = path.length > 1
+        this.result = res ? 'success' : 'fail'
+        this.message = this.errorMessage()
+    }
+
+    errorMessage(): String {
+        return "valid"
+    }
+    
+}
+
+class QueryChecker implements ErrorCheckIntrerface {
+    result: String
+    message: String
+
+    constructor(query: URLSearchParams) {
+        const res :boolean = true
+        this.result = res ? 'success' : 'fail'
+        this.message = this.errorMessage()
+    }
+
+    errorMessage(): String {
+        return "valid"
+    }
+    
+}
+
 const parse = {
     link : function(req : Request, res: Response) {
         const url = new URL(req.query.url as string)
@@ -61,8 +93,8 @@ const parse = {
         console.log("query:",url.search)
         console.log("query:",url.searchParams.keys())
         const scheme_check : ErrorCheckIntrerface = new SchemChecker(url.protocol)
-        const path_check : ErrorCheckType = new ErrorCheckType(url.pathname.length > 1)
-        const query_check : ErrorCheckType = new ErrorCheckType(true)
+        const path_check : ErrorCheckIntrerface = new PathChecker(url.pathname)
+        const query_check : ErrorCheckIntrerface = new QueryChecker(url.searchParams)
 
         res.json({
             url: url.toString(),
