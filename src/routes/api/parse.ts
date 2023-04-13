@@ -22,20 +22,6 @@ interface ErrorCheckIntrerface {
     errorMessage() : String
 }
 
-class ErrorCheckType implements ErrorCheckIntrerface {
-    result : String
-    message : String
-
-    constructor(result: Boolean) {
-        this.result = result ? `success` : `fail`
-        this.message = this.errorMessage()
-    }
-
-    errorMessage() {
-        return "valid"
-    }
-}
-
 class SchemChecker implements ErrorCheckIntrerface {
     result: String
     message: String
@@ -57,7 +43,7 @@ class PathChecker implements ErrorCheckIntrerface {
     message: String
 
     constructor(path: String) {
-        const res :boolean = path.length > 1
+        const res :boolean = path.length > 0
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage()
     }
