@@ -1,16 +1,12 @@
 const swaggerAutogen = require('swagger-autogen')()
 
 const options = {
-  swaggerDefinition: {
-    openapi: "3.0.0",
-    info: {
-      version: "1.0.0",
-      title: "swagger title",
-      description:
-        "swagger 떴냐?",
-    },
+  info: {
+    title: "swagger 타이틀",
+    description: "swagger 떴냐?",
   },
-  apis: ["**/*.ts"], //Swagger 파일 연동
+  host: "localhost:12345",
+  schemes: ["http"],
 }
 
 const outputFile = './swagger_output.json' // swagger-autogen이 실행 후 생성될 파일 위치와 이름

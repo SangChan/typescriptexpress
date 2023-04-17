@@ -1,17 +1,28 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "swagger 타이틀",
+    "description": "swagger 떴냐?",
+    "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "localhost:12345",
   "basePath": "/",
   "schemes": [
     "http"
   ],
   "paths": {
     "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/": {
       "get": {
         "description": "",
         "parameters": [],
@@ -39,16 +50,5 @@
         }
       }
     }
-  },
-  "swaggerDefinition": {
-    "openapi": "3.0.0",
-    "info": {
-      "version": "1.0.0",
-      "title": "swagger title",
-      "description": "swagger 떴냐?"
-    }
-  },
-  "apis": [
-    "**/*.ts"
-  ]
+  }
 }
