@@ -62,6 +62,9 @@ class QueryChecker implements ErrorCheckIntrerface {
 
     constructor(query: URLSearchParams) {
         console.log("query : ", query.toString())
+        query.forEach((value, key) => {
+            console.log(value, key)
+        })
         const res :boolean = true
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage()
