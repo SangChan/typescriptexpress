@@ -78,7 +78,10 @@ class QueryChecker implements ErrorCheckIntrerface {
 
 const parse = {
     link : function(req : Request, res: Response) {
-        const url = new URL(req.query.url as string)
+        console.log("req = ", req.query)
+        const urlString : string = req.query.url as string
+        console.log(urlString)
+        const url = new URL(urlString)
         const scheme_check : ErrorCheckIntrerface = new SchemChecker(url.protocol)
         const path_check : ErrorCheckIntrerface = new PathChecker(url.pathname)
         const query_check : ErrorCheckIntrerface = new QueryChecker(url.searchParams)
