@@ -19,7 +19,7 @@ namespace DataType {
 interface ErrorCheckIntrerface {
     result : String
     message : String
-    errorMessage() : String
+    errorMessage(res: Boolean) : String
 }
 
 class SchemChecker implements ErrorCheckIntrerface {
@@ -30,11 +30,11 @@ class SchemChecker implements ErrorCheckIntrerface {
         console.log("scheme : ", scheme)
         const res :boolean = (scheme === "https:") || scheme.startsWith('https://')
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage()
+        this.message = this.errorMessage(res)
     }
 
-    errorMessage(): String {
-        return "valid"
+    errorMessage(res: Boolean): String {
+        return res ? "valid" : "not valid"
     }
     
 }
@@ -47,11 +47,11 @@ class PathChecker implements ErrorCheckIntrerface {
         console.log("path : ", path)
         const res :boolean = path.length > 0
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage()
+        this.message = this.errorMessage(res)
     }
 
-    errorMessage(): String {
-        return "valid"
+    errorMessage(res: Boolean): String {
+        return res ? "valid" : "not valid"
     }
     
 }
@@ -67,11 +67,11 @@ class QueryChecker implements ErrorCheckIntrerface {
         })
         const res :boolean = true
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage()
+        this.message = this.errorMessage(res)
     }
 
-    errorMessage(): String {
-        return "valid"
+    errorMessage(res: Boolean): String {
+        return res ? "valid" : "not valid"
     }
     
 }
