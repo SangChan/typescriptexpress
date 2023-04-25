@@ -80,7 +80,7 @@ class QueryChecker implements ErrorCheckIntrerface {
 const parse = {
     link : function(req : Request, res: Response) {
         console.log("scheme = ", req.query.scheme)
-        console.log("scheme = ", req.query.host)
+        console.log("host = ", req.query.host)
         console.log("path = ", req.query.path)
         console.log("query = ", req.query.query)
         const url = new URL(req.query.url as string)
