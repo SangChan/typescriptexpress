@@ -5,6 +5,20 @@ const parse = require('./parse')
 
 router.get('/', (req, res, next) => {
     res.send('[route] api index')
+    const url = require('url');
+
+    const urlString = 'https://www.example.com/path/to/resource?key1=value1&key2=value2#section1';
+
+    const parsedUrl = new URL(urlString);
+
+    const protocol = parsedUrl.protocol; // "https:"
+    const host = parsedUrl.host; // "www.example.com"
+    const hostname = parsedUrl.hostname; // "www.example.com"
+    const port = parsedUrl.port; // "" (if not specified in the URL)
+    const path = parsedUrl.pathname; // "/path/to/resource"
+    const search = parsedUrl.search; // "?key1=value1&key2=value2"
+    const hash = parsedUrl.hash; // "#section1"
+    console.log("search:", search)
 })
 
 router.get("/parseLink", (req, res) => {
