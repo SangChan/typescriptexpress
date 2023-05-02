@@ -27,6 +27,7 @@ router.get("/parseLink", (req, res) => {
 
 
 router.get('/example', (req, res) => {
+    const url = require('url');
     const urlString = req.query.url as string; // assuming the URL parameter is passed as a query parameter
     const parsedUrl = new URL(urlString); // parse the URL using the built-in URL constructor
     const scheme = parsedUrl.protocol; // get the scheme (http or https)
