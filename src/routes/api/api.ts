@@ -4,7 +4,7 @@ const router = express.Router()
 const parse = require('./parse')
 const test = require('./test')
 
-router.get('/', (req, res, next) => {
+router.post('/', (req, res) => {
     test.root(req, res)
 })
 
