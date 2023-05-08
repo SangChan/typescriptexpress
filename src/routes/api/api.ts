@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
     test.root(req, res)
 })
 
-router.get('/example', (req, res) => {
+router.post('/example', (req, res) => {
     test.example(req, res)
 });
 
