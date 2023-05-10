@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
 
 router.post('/example', (req, res) => {
     test.example(req, res)
-});
+})
 
 router.get("/parseLink", (req, res) => {
     parse.link(req, res)
