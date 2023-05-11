@@ -37,6 +37,7 @@
 
 - api.ts
 - parse.ts
+- test.ts
 
 ## /src/public
 
