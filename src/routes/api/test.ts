@@ -15,7 +15,10 @@ const test = {
         const search = parsedUrl.search; // "?key1=value1&key2=value2"
         const hash = parsedUrl.hash; // "#section1"
         console.log("search:", search)
-        res.send('[route] api index')
+        
+        res.json({
+            result: "success"
+        })
     },
     example : function(req : Request, res: Response) { 
         const url = require('url');
@@ -31,7 +34,9 @@ const test = {
         console.log('Path:', path);
         console.log('Query:', query);
     
-        res.send('Example GET request');
+        res.json({
+            result: "success"
+        })
     }
 }
 
