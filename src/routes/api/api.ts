@@ -16,4 +16,9 @@ router.get("/parseLink", (req, res) => {
     parse.link(req, res)
 })
 
+
+router.post("/parseUrl", (req, res) => {
+    parse.link(req, res)
+})
+
 module.exports = router
