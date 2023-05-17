@@ -4,7 +4,7 @@ const router = express.Router()
 const parse = require('./parse')
 const test = require('./test')
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
     test.root(req, res)
 })
 
@@ -12,12 +12,12 @@ router.post('/example', (req, res) => {
     test.example(req, res)
 })
 
-router.get("/parseLink", (req, res) => {
+router.get("/parse", (req, res) => {
     parse.link(req, res)
 })
 
 
-router.post("/parseUrl", (req, res) => {
+router.post("/parse", (req, res) => {
     parse.link(req, res)
 })
 
