@@ -17,7 +17,7 @@ const test = {
         console.log("search:", search)
         
         res.json({
-            result: "[root]success"
+            result: "[test::root]success"
         })
     },
     example : function(req : Request, res: Response) { 
@@ -35,7 +35,7 @@ const test = {
         console.log('Query:', query);
     
         res.json({
-            result: "[example]success"
+            result: "[test::example]success"
         })
     }
 }
