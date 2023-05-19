@@ -16,7 +16,6 @@ router.get("/parse", (req, res) => {
     parse.link(req, res)
 })
 
-
 router.post("/parse", (req, res) => {
     parse.link(req, res)
 })
