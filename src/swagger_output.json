@@ -23,7 +23,7 @@
       }
     },
     "/api/": {
-      "post": {
+      "get": {
         "description": "",
         "parameters": [],
         "responses": {
@@ -50,8 +50,8 @@
         }
       }
     },
-    "/api/parseLink": {
-      "get": {
+    "/api/parse": {
+      "post": {
         "description": "",
         "parameters": [
           {
