@@ -4,10 +4,6 @@ const router = express.Router()
 const parse = require('./parse')
 const test = require('./test')
 
-router.get('/', (req, res) => {
-    test.root(req, res)
-})
-
 router.post('/example', (req, res) => {
     test.example(req, res)
 })
