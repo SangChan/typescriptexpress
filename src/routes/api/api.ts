@@ -2,10 +2,10 @@ import express from 'express'
 
 const router = express.Router()
 const parse = require('./parse')
-const test = require('./test')
+const parse2 = require('./parse2')
 
 router.post('/example', (req, res) => {
-    test.example(req, res)
+    parse2.example(req, res)
 })
 
 router.post("/parse", (req, res) => {

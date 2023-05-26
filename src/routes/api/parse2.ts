@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express'
 
-const test = {
+const parse2 = {
     root : function(req : Request, res: Response) {
         const url = require('url');
 
@@ -41,4 +41,4 @@ const test = {
     }
 }
 
-module.exports = test
+module.exports = parse2
