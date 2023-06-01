@@ -1,6 +1,24 @@
 import express, { Request, Response, NextFunction } from 'express'
 import { ErrorCheckIntrerface } from './interface/error_interface'
 
+const parse = {
+    link : function(req : Request, res: Response) {
+        const url = new URL(req.query.url as string)
+        const scheme_check : ErrorCheckIntrerface = new SchemChecker(url.protocol)
+        const host_check : ErrorCheckIntrerface = new HostChecker(url.host)
+        const path_check : ErrorCheckIntrerface = new PathChecker(url.pathname)
+        const query_check : ErrorCheckIntrerface = new QueryChecker(url.searchParams)
+
+        res.json({
+            url: url.toString(),
+            schemeCheck: scheme_check,
+            hostCheck : host_check,
+            pathCheck: path_check,
+            queryCheck: query_check
+        })  
+    }
+}
+
 class SchemChecker implements ErrorCheckIntrerface {
     result: String
     message: String
@@ -70,24 +88,6 @@ class QueryChecker implements ErrorCheckIntrerface {
         return res ? "valid" : "not valid"
     }
     
-}
-
-const parse = {
-    link : function(req : Request, res: Response) {
-        const url = new URL(req.query.url as string)
-        const scheme_check : ErrorCheckIntrerface = new SchemChecker(url.protocol)
-        const host_check : ErrorCheckIntrerface = new HostChecker(url.host)
-        const path_check : ErrorCheckIntrerface = new PathChecker(url.pathname)
-        const query_check : ErrorCheckIntrerface = new QueryChecker(url.searchParams)
-
-        res.json({
-            url: url.toString(),
-            schemeCheck: scheme_check,
-            hostCheck : host_check,
-            pathCheck: path_check,
-            queryCheck: query_check
-        })  
-    }
 }
 
 module.exports = parse
