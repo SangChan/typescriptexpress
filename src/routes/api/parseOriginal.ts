@@ -1,10 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express'
-
-interface ErrorCheckIntrerface {
-    result : String
-    message : String
-    errorMessage(res: Boolean) : String
-}
+import { ErrorCheckIntrerface } from './interface/error_interface'
 
 class SchemChecker implements ErrorCheckIntrerface {
     result: String
