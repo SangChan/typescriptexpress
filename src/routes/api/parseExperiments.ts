@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'
 
 const parse = {
+    //임의의 url 스트링을 분해 해봄.
     root : function(req : Request, res: Response) {
         const url = require('url');
 
@@ -22,6 +23,7 @@ const parse = {
         })
     },
     example : function(req : Request, res: Response) { 
+        // url 스트링을 입력 받아서 분해해봄.
         const url = require('url');
         const urlString = req.query.url as string; // assuming the URL parameter is passed as a query parameter
         const parsedUrl = new URL(urlString); // parse the URL using the built-in URL constructor
