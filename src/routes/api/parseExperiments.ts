@@ -16,7 +16,13 @@ const parse = {
         const path = parsedUrl.pathname; // "/path/to/resource"
         const search = parsedUrl.search; // "?key1=value1&key2=value2"
         const hash = parsedUrl.hash; // "#section1"
+        console.log("protocol:", protocol)
+        console.log("host:", host)
+        console.log("hostname:", hostname)
+        console.log("port:", port)
+        console.log("path:", path)
         console.log("search:", search)
+        console.log("hash:", hash)
         
         res.json({
             result: "[test::root]success"
