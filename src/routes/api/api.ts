@@ -4,8 +4,12 @@ const router = express.Router()
 const parse = require('./parse')
 const parse2 = require('./parseExperiments')
 
-router.post('/example', (req, res) => {
-    parse2.example(req, res)
+router.post('/test2', (req, res) => {
+    parse2.test2(req, res)
+})
+
+router.post('/test1', (req, res) => {
+    parse2.test1(req, res)
 })
 
 router.post("/parse", (req, res) => {

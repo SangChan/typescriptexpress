@@ -2,7 +2,7 @@ import express, { Request, Response, NextFunction } from 'express'
 
 const parse = {
     //임의의 url 스트링을 분해 해봄.
-    root : function(req : Request, res: Response) {
+    test1 : function(req : Request, res: Response) {
         const url = require('url');
 
         const urlString = 'https://www.example.com/path/to/resource?key1=value1&key2=value2#section1';
@@ -28,7 +28,7 @@ const parse = {
             result: "[test::root]success"
         })
     },
-    example : function(req : Request, res: Response) { 
+    test2 : function(req : Request, res: Response) { 
         // url 스트링을 입력 받아서 분해해봄.
         const url = require('url');
         const urlString = req.query.url as string; // assuming the URL parameter is passed as a query parameter
