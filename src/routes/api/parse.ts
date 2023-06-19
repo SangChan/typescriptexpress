@@ -20,12 +20,14 @@ const parse = {
 }
 
 class SchemChecker implements ErrorCheckIntrerface {
+    code: Number
     result: String
     message: String
 
     constructor(scheme: String) {
         console.log("scheme : ", scheme)
         const res :boolean = (scheme === "https:") || scheme.startsWith('https://')
+        this.code = 0
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(res)
     }
@@ -37,12 +39,14 @@ class SchemChecker implements ErrorCheckIntrerface {
 }
 
 class HostChecker implements ErrorCheckIntrerface {
+    code: Number
     result: String
     message: String
 
     constructor(host: String) {
         console.log("host : ", host)
         const res :boolean = host.length > 0
+        this.code = 0
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(res)
     }
@@ -54,12 +58,14 @@ class HostChecker implements ErrorCheckIntrerface {
 }
 
 class PathChecker implements ErrorCheckIntrerface {
+    code: Number
     result: String
     message: String
 
     constructor(path: String) {
         console.log("path : ", path)
         const res :boolean = path.length > 0
+        this.code = 0
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(res)
     }
@@ -71,6 +77,7 @@ class PathChecker implements ErrorCheckIntrerface {
 }
 
 class QueryChecker implements ErrorCheckIntrerface {
+    code: Number
     result: String
     message: String
 
