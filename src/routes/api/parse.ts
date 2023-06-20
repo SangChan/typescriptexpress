@@ -87,6 +87,7 @@ class QueryChecker implements ErrorCheckIntrerface {
             console.log(value, key)
         })
         const res :boolean = true
+        this.code = 0
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(res)
     }

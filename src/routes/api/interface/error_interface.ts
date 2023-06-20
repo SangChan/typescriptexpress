@@ -1,5 +1,5 @@
 export interface ErrorCheckIntrerface {
-    code : Int
+    code : Number
     result : String
     message : String
     errorMessage(res: Boolean) : String
