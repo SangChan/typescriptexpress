@@ -22,18 +22,7 @@
         }
       }
     },
-    "/api/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/example": {
+    "/api/test2": {
       "post": {
         "description": "",
         "parameters": [
@@ -43,6 +32,17 @@
             "type": "string"
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/test1": {
+      "post": {
+        "description": "",
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
