@@ -29,11 +29,11 @@ class SchemChecker implements ErrorCheckIntrerface {
         const res :boolean = (scheme === "https:") || scheme.startsWith('https://')
         this.code = 0
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage(res)
+        this.message = this.errorMessage(this.code)
     }
 
-    errorMessage(res: Boolean): String {
-        return res ? "valid" : "not valid"
+    errorMessage(code: Number): String {
+        return code == 0 ? "valid" : "not valid"
     }
     
 }
@@ -48,11 +48,11 @@ class HostChecker implements ErrorCheckIntrerface {
         const res :boolean = host.length > 0
         this.code = 0
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage(res)
+        this.message = this.errorMessage(this.code)
     }
 
-    errorMessage(res: Boolean): String {
-        return res ? "valid" : "not valid"
+    errorMessage(code: Number): String {
+        return code ? "valid" : "not valid"
     }
     
 }
@@ -70,8 +70,8 @@ class PathChecker implements ErrorCheckIntrerface {
         this.message = this.errorMessage(res)
     }
 
-    errorMessage(res: Boolean): String {
-        return res ? "valid" : "not valid"
+    errorMessage(code: Number): String {
+        return code == 0 ? "valid" : "not valid"
     }
     
 }
@@ -89,11 +89,11 @@ class QueryChecker implements ErrorCheckIntrerface {
         const res :boolean = true
         this.code = 0
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage(res)
+        this.message = this.errorMessage(this.code)
     }
 
-    errorMessage(res: Boolean): String {
-        return res ? "valid" : "not valid"
+    errorMessage(code: Number): String {
+        return code == 0 ? "valid" : "not valid"
     }
     
 }
