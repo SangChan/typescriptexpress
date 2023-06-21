@@ -67,7 +67,7 @@ class PathChecker implements ErrorCheckIntrerface {
         const res :boolean = path.length > 0
         this.code = 0
         this.result = res ? 'success' : 'fail'
-        this.message = this.errorMessage(res)
+        this.message = this.errorMessage(this.code)
     }
 
     errorMessage(code: Number): String {
