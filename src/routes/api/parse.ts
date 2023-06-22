@@ -27,7 +27,7 @@ class SchemChecker implements ErrorCheckIntrerface {
     constructor(scheme: String) {
         console.log("scheme : ", scheme)
         const res :boolean = (scheme === "https:") || scheme.startsWith('https://')
-        this.code = 0
+        this.code = res ? 0 : -1
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(this.code)
     }
@@ -46,7 +46,7 @@ class HostChecker implements ErrorCheckIntrerface {
     constructor(host: String) {
         console.log("host : ", host)
         const res :boolean = host.length > 0
-        this.code = 0
+        this.code = res ? 0 : -1
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(this.code)
     }
@@ -65,7 +65,7 @@ class PathChecker implements ErrorCheckIntrerface {
     constructor(path: String) {
         console.log("path : ", path)
         const res :boolean = path.length > 0
-        this.code = 0
+        this.code = res ? 0 : -1
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(this.code)
     }
@@ -87,7 +87,7 @@ class QueryChecker implements ErrorCheckIntrerface {
             console.log(value, key)
         })
         const res :boolean = true
-        this.code = 0
+        this.code = res ? 0 : -1
         this.result = res ? 'success' : 'fail'
         this.message = this.errorMessage(this.code)
     }
