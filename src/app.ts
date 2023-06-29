@@ -7,6 +7,7 @@ const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+app.use(express.static(__dirname+"/public"))
 
 //라우팅 모듈 선언
 const indexRouter = require('./routes/index')

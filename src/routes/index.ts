@@ -1,10 +1,11 @@
 import express from 'express'
 
+const path = require('path')
 const router = express.Router()
 
 router.get('', (req, res) => {
     //res.send('<h1> I am Iron Man</h1>')
-    res.sendFile('./views/index.html')
+    res.sendFile(path.join(__dirname, '..', 'views', 'index.html'))
 })
 
 router.get('/about',(req, res) => {
