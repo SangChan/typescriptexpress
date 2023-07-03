@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/": {
+    "/about": {
       "get": {
         "description": "",
         "parameters": [],
@@ -20,6 +20,13 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/pug": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
       }
     },
     "/api/test2": {

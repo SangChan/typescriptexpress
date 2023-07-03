@@ -1,0 +1,24 @@
+html
+    head
+        meta(charset='utf-8')
+        title PUG
+        style.
+            .contents {
+                background : #ccc;
+                padding : 30px;
+                margin : 10px;
+                font-weight : bold
+            }
+    body
+        h1(style = 'color : #C80000')= title
+        -for(i = 0; i < 3; i++)
+            li Hello pug!
+        .contents
+            | content box
+        input#btn(type='button' value='Click!')
+
+        script.
+            var btn = document.getElementById('btn');
+            btn.addEventListener('click', function() {
+                alert('click! click!');
+            });
