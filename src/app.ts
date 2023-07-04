@@ -1,6 +1,10 @@
 import express from 'express'
+import { createRequire  } from 'module'
+import path from 'path';
+const __dirname = path.resolve();
+const require = createRequire(import.meta.url)
 
-const swaggerUi = require('swagger-ui-express')
+import swaggerUi from 'swagger-ui-express'
 const swaggerFile = require('./swagger_output.json')
 
 const app = express()
@@ -10,7 +14,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(__dirname+"/public"))
 
 //라우팅 모듈 선언
-const indexRouter = require('./routes/index')
+import indexRouter from './routes/index'
 app.use('/', indexRouter)
 
 const apiRouter = require('./routes/api/api')

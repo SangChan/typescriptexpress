@@ -1,7 +1,8 @@
 import express from 'express'
+import path from 'path';
+const __dirname = path.resolve();
 
 const router = express()
-const path = require('path')
 const __viewsName = path.join(__dirname, '..', 'views')
 router.set('views', __viewsName)
 router.set('view engine', 'pug')
