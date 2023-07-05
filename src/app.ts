@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(__dirname+"/public"))
 
 //라우팅 모듈 선언
-import indexRouter from './routes/index'
+import { indexRouter } from './routes/index'
 app.use('/', indexRouter)
 
 const apiRouter = require('./routes/api/api')
