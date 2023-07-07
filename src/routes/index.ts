@@ -1,6 +1,7 @@
 import express from 'express'
+import { fileURLToPath } from 'url'
 import path from 'path';
-const __dirname = path.resolve();
+const __dirname = fileURLToPath(new URL(".", import.meta.url)); 
 
 export const indexRouter = express()
 const __viewsName = path.join(__dirname, '..', 'views')
