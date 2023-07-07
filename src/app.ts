@@ -17,7 +17,7 @@ app.use(express.static(__dirname+"/public"))
 import { indexRouter } from './routes/index'
 app.use('/', indexRouter)
 
-const apiRouter = require('./routes/api/api')
+import { apiRouter } from './routes/api/api'
 app.use('/api', apiRouter)
 
 app.listen(12345, () => {

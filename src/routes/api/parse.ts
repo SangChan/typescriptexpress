@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'
 import { ErrorCheckIntrerface } from './interface/error_interface'
 
-const parse = {
+export const parse = {
     link : function(req : Request, res: Response) {
         const url = new URL(req.query.url as string)
         const schemeCheck : ErrorCheckIntrerface = new SchemChecker(url.protocol)
@@ -97,5 +97,3 @@ class QueryChecker implements ErrorCheckIntrerface {
     }
     
 }
-
-module.exports = parse
