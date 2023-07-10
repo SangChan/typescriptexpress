@@ -29,34 +29,6 @@
         "responses": {}
       }
     },
-    "/api/test2": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "url",
-            "in": "query",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/test1": {
-      "post": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/parse": {
       "post": {
         "description": "",

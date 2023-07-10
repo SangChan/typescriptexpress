@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/app.js",
-    "prestart": "node src/swagger.ts",
+    "prestart": "ts-node src/swagger.ts",
     "dev": "nodemon src/app.ts",
     "build": "tsc -p ."
   },
