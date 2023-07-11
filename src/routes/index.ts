@@ -1,6 +1,7 @@
 import express from 'express'
 import { fileURLToPath } from 'url'
 import path from 'path';
+import pug from 'pug'
 const __dirname = fileURLToPath(new URL(".", import.meta.url)); 
 
 export const indexRouter = express()
@@ -19,3 +20,17 @@ indexRouter.get('/about',(req, res) => {
 indexRouter.get('/pug', (req, res) => {
     res.render('template.pug', {title: 'PUG : EXPRESS TEMPLATE ENGINE'})
 })
+
+const compiledFunction = pug.compileFile(path.join(__viewsName, 'temp.pug'))
+
+console.log(compiledFunction({
+    name: 'Timothy'
+}))
+
+console.log(compiledFunction({
+    name: 'Forbes'
+}))
+
+console.log(pug.renderFile(path.join(__viewsName, 'temp.pug'), {
+    name: 'Timothy'
+}))
