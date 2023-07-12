@@ -21,7 +21,8 @@ indexRouter.get('/pug', (req, res) => {
     res.render('template.pug', {title: 'PUG : EXPRESS TEMPLATE ENGINE'})
 })
 
-const compiledFunction = pug.compileFile(path.join(__viewsName, 'temp.pug'))
+const tempPugFile = path.join(__viewsName, 'temp.pug')
+const compiledFunction = pug.compileFile(tempPugFile)
 
 console.log(compiledFunction({
     name: 'Timothy'
@@ -31,6 +32,6 @@ console.log(compiledFunction({
     name: 'Forbes'
 }))
 
-console.log(pug.renderFile(path.join(__viewsName, 'temp.pug'), {
+console.log(pug.renderFile(tempPugFile, {
     name: 'Timothy'
 }))
