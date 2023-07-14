@@ -21,6 +21,7 @@ indexRouter.get('/pug', (req, res) => {
     res.render('template.pug', {title: 'PUG : EXPRESS TEMPLATE ENGINE'})
 })
 
+// about, index, pug 가 실행되면 불린다.
 const tempPugFile = path.join(__viewsName, 'temp.pug')
 const compiledFunction = pug.compileFile(tempPugFile)
 
