@@ -5,24 +5,25 @@ import pug from 'pug'
 const __dirname = fileURLToPath(new URL(".", import.meta.url)); 
 
 export const indexRouter = express()
-const __viewsName = path.join(__dirname, '..', 'views')
-indexRouter.set('views', __viewsName)
+const __viewsname = path.join(__dirname, '..', 'views')
+indexRouter.set('views', __viewsname)
 indexRouter.set('view engine', 'pug')
 
 indexRouter.get('', (req, res) => {
-    res.sendFile(path.join(__viewsName, 'index.html'))
+    res.sendFile(path.join(__viewsname, 'index.html'))
 })
 
 indexRouter.get('/about',(req, res) => {
-    res.sendFile(path.join(__viewsName, 'about.html'))
+    res.sendFile(path.join(__viewsname, 'about.html'))
 })
 
 indexRouter.get('/pug', (req, res) => {
     res.render('template.pug', {title: 'PUG : EXPRESS TEMPLATE ENGINE'})
 })
 
-// about, index, pug 가 실행되면 불린다.
-const tempPugFile = path.join(__viewsName, 'temp.pug')
+//console.log(__dirname)
+//console.log(__viewsname)
+const tempPugFile = path.join(__viewsname, 'temp.pug')
 const compiledFunction = pug.compileFile(tempPugFile)
 
 console.log(compiledFunction({
