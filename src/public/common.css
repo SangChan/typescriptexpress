@@ -1,0 +1,210 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: lightgray;
+    margin: 0;
+  }
+  
+  
+  a {
+    color: #000000;
+    text-decoration: solid;
+  }
+  
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  li {
+    list-style-type: none;
+  }
+  
+  
+  .Top {
+    background: black;
+    height: 60px;
+  }
+  
+  
+  #Logo img {
+    float: left;
+    margin-left: 20px;
+    height: 100%;
+  }
+  
+  
+  #Logo h1 {
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+    color: white;
+  }
+  
+  
+  .Login {
+    float: right;
+    padding-top: 18px;
+    padding-right: 20px;
+  }
+  
+  
+  .Login a {
+    font-size: 16px;
+    color: white;
+  }
+  
+  
+  .Content {
+    float: right;
+    max-width: 1600px;
+    width: 100%;
+    padding: 0;
+  }
+  
+  
+  .Body {
+    float: left;
+    max-width: 1200px;
+    min-width: 250px;
+    width: 70%;
+    background: white;
+    box-sizing: border-box;
+    padding:0px 20px;
+    margin-top: 25px;
+  }
+  
+  
+  .category-navbar {
+    float: left;
+    margin-left: 25px;
+    margin-top: 25px;
+    line-height: 2em;
+    width: 25%;
+    min-height: 200px;
+    padding: 10px;
+    border: 1px lightgray solid;
+    background: white;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  
+  #write-button {
+    position: absolute;
+    background-color: teal;
+    padding: 2px;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  
+  #write-button>a {
+    color: white;
+  }
+  
+  
+  .category-list {
+    color: gray;
+    border-bottom: 1px solid lightgray;
+    font-size: 24px;
+  }
+  
+  
+  .category-list-text {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  
+  .input-text {
+    width: 90%;
+  }
+  
+  
+  #category-settings {
+    display: inline-block;
+    border: none;
+    background: none;
+  }
+  
+  
+  #category-settings:hover {
+    cursor: pointer;
+  }
+  
+  
+  #category-settings:focus {
+    border: none;
+  }
+  
+  
+  #category-settings-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .posts-list {
+    border-top: 1px solid lightgray;
+    padding: 10px;
+  }
+  
+  
+  .posts-list h3 {
+    display: inline;
+  }
+  
+  
+  .posts-list small {
+    float: right;
+  }
+  
+  
+  .posts-list p {
+    color: #999999;
+  }
+  
+  .BodyDateTime {
+    display: block;
+    text-align: right;
+    color: gray;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  
+  .BodyTitle {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  
+  
+  .BodyText {
+    white-space: pre-wrap;
+  }
+  
+  
+  .delete-container {
+    padding-left: 20px;
+  }
+  
+  
+  .delete-text {
+    color: lightgray;
+  }
+  
+  
+  .deletenedit {
+    text-align: right;
+    margin: 10px;
+  }
+  
+  
+  .deletenedit > form {
+    display: inline;
+  }
